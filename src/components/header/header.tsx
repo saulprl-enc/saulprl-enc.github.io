@@ -9,7 +9,7 @@ export const Header = () => {
           alt="Encora's symbol"
           className="object-contain h-10"
         />
-        <h1 className="text-lg font-bold">Saúl&apos;s Spark Journey</h1>
+        <span className="text-lg font-bold">Saúl&apos;s Spark Journey</span>
         <div className="flex-grow"></div>
         <Navbar />
       </div>

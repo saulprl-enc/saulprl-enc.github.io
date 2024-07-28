@@ -1,3 +1,11 @@
+import { BlogSection } from "@/components/blog/blog-section";
+import { Hero } from "@/components/hero/hero";
+
 export const HomePage = () => {
-  return <><section className="w-full h-14 bg-white"></section></>
+  return (
+    <>
+      <Hero />
+      <BlogSection />
+    </>
+  );
 };

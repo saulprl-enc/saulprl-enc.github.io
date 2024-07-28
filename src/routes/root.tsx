@@ -3,8 +3,11 @@ import { Outlet } from "react-router-dom";
 
 export const Root = () => {
   return (
-    <main className="w-screen min-h-screen flex flex-col items-center gap-4 bg-purple-200">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-purple-200">
       <Header />
-    </main>
+      <main className="flex flex-col w-full px-4 items-center gap-4 max-w-6xl mx-auto">
+        <Outlet />
+      </main>
+    </div>
   );
 };

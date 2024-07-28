@@ -51,6 +51,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "encora-blue": {
+          DEFAULT: "hsl(var(--encora-blue))",
+        },
+        "encora-red": {
+          DEFAULT: "hsl(var(--encora-red))",
+        },
+        "encora-green": {
+          DEFAULT: "hsl(var(--encora-green))",
+        },
+        "encora-yellow": {
+          DEFAULT: "hsl(var(--encora-yellow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -6,6 +6,7 @@ import { Root } from "./routes/root.tsx";
 import { HomePage } from "./routes/index.tsx";
 import { BlogPage } from "./routes/blog.tsx";
 import { BlogEntry, loader as entryLoader } from "./routes/blog-entry.tsx";
+import { NotFound } from "./routes/not-found.tsx";
 
 const router = createHashRouter([
   {
@@ -15,6 +16,7 @@ const router = createHashRouter([
       { path: "/", element: <HomePage /> },
       { path: "/blog", element: <BlogPage /> },
       { path: "/blog/:entrySlug", element: <BlogEntry />, loader: entryLoader },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);

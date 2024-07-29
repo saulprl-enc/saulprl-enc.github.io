@@ -26,7 +26,7 @@ export const Navbar: FC<Props> = ({ orientation = "horizontal" }) => {
           </CustomNavLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <CustomNavLink to="/certifications">
+          <CustomNavLink to="#">
             <NavigationMenuLink>Certifications</NavigationMenuLink>
           </CustomNavLink>
         </NavigationMenuItem>

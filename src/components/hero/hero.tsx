@@ -8,7 +8,7 @@ export const Hero = () => {
         <img
           src="/encora-logo-black.svg"
           alt="Encora's logo"
-          className="h-10"
+          className="h-10 self-center md:self-auto"
         />
         <h1 className="font-bold text-4xl text-center md:text-left">
           Welcome to my Spark Journey!
@@ -26,7 +26,7 @@ export const Hero = () => {
           <LinkButton to="/blog" className="bg-encora-red">
             Blog
           </LinkButton>
-          <LinkButton to="#" className="bg-encora-green">
+          <LinkButton to="/certifications" className="bg-encora-green">
             Certifications
           </LinkButton>
         </div>

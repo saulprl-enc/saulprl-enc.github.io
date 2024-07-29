@@ -33,8 +33,8 @@ export const Navbar: FC<NavigationMenuProps> = ({
           </CustomNavLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <CustomNavLink to="/certifications">
-            <NavigationMenuLink>Certifications</NavigationMenuLink>
+          <CustomNavLink to="/technical-logs">
+            <NavigationMenuLink>Technical Logs</NavigationMenuLink>
           </CustomNavLink>
         </NavigationMenuItem>
       </NavigationMenuList>

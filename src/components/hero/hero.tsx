@@ -26,8 +26,8 @@ export const Hero = () => {
           <LinkButton to="/blog" className="bg-encora-red">
             Blog
           </LinkButton>
-          <LinkButton to="/certifications" className="bg-encora-green">
-            Certifications
+          <LinkButton to="/technical-logs" className="bg-encora-blue">
+            Technical Logs
           </LinkButton>
         </div>
       </div>

@@ -1,0 +1,40 @@
+export { Layout as default } from "../components/components.tsx";
+
+# Permutations
+
+<br />
+## Overview
+
+<br />
+_Permutations_ consists of generating all of the possible permutations (modifying
+the order of the elements without affecting its structure) for an array of numbers.
+In this case, we receive an array of numbers and should output a list of number arrays,
+where every array is a permutation.
+
+<br />
+## Context
+
+<br />
+In order to solve this problem, you should have a good understanding of [permutations](https://en.wikipedia.org/wiki/Permutation),
+[array iteration](https://www.w3schools.com/js/js_array_iteration.asp), and [recursion](https://www.freecodecamp.org/news/recursion-in-javascript/).
+
+<br />
+## Solution
+
+<br />
+For this solution, I decided to implement a recursive function since I had worked
+on something similar regarding combinations. In this case, though, I needed to generate
+permutations. Like every recursive function, we must start with a base case so we
+don't end up blowing up our computer. Since we will be internally modifying the array,
+our base case will be to return an array with a single value when the array is of
+length 1. Afterwards, we will loop through the array to extract the first number
+of the array and then permute the remaining elements. After recursion is done, we
+add all of the permutations obtained and store them in another array.
+
+<br />
+## Alternative solutions
+
+<br />
+Since I had previously worked on a similar function for combinations, I went directly
+with the aforementioned approach, recursion. However, if it's possible with recursion,
+it's also possible with loops.

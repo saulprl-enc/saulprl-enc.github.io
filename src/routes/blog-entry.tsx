@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 import { blogEntries, TBlogEntry } from "@/components/blog/entries";
 
-export function loader({ params }) {
+export function blogEntryLoader({ params }) {
   if (!params || !params.entrySlug) {
     throw new Error("Received unexpected params");
   }

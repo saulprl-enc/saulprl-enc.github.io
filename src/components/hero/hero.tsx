@@ -10,7 +10,7 @@ export const Hero = () => {
           alt="Encora's logo"
           className="h-10"
         />
-        <h1 className="font-bold text-3xl">Welcome to my Spark Journey!</h1>
+        <h1 className="font-bold text-4xl">Welcome to my Spark Journey!</h1>
         <p>
           Hi, my name is{" "}
           <span className="font-bold text-primary">Saúl Ramos</span> and in this

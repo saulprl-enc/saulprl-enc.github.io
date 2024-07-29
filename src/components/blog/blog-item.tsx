@@ -29,6 +29,19 @@ export const BlogItemTitle: FC<TitleProps> = ({ className, children }) => {
   );
 };
 
+export const BlogItemEstimation: FC<TitleProps> = ({ className, children }) => {
+  return (
+    <span
+      className={cn(
+        "absolute bottom-1 left-0 text-encora-red text-base pl-2",
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
+};
+
 interface DateProps {
   date: Date;
   className?: string;
@@ -38,7 +51,7 @@ export const BlogItemDate: FC<DateProps> = ({ className, date }) => {
   return (
     <span
       className={cn(
-        "absolute bottom-1 right-0 w-1/2 text-center bg-encora-red text-white text-base transition-all group-hover:w-full",
+        "absolute bottom-1 right-0 w-1/2 text-center bg-encora-red text-white text-base transition-all",
         className
       )}
     >

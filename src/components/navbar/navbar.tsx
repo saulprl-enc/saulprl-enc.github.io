@@ -6,15 +6,22 @@ import {
   NavigationMenuList,
 } from "../ui/navigation-menu";
 import { NavLink, NavLinkProps } from "react-router-dom";
+import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
+import { cn } from "@/lib/utils";
 
-interface Props {
-  orientation?: "vertical" | "horizontal";
-}
-
-export const Navbar: FC<Props> = ({ orientation = "horizontal" }) => {
+export const Navbar: FC<NavigationMenuProps> = ({
+  orientation,
+  className,
+  ...props
+}) => {
   return (
-    <NavigationMenu orientation={orientation}>
+    <NavigationMenu
+      {...props}
+      orientation={orientation}
+      className={cn(className)}
+    >
       <NavigationMenuList className="gap-2">
+        {orientation === "vertical" ? <div className="py-2"></div> : null}
         <NavigationMenuItem>
           <CustomNavLink to="/">
             <NavigationMenuLink>Home</NavigationMenuLink>
@@ -26,7 +33,7 @@ export const Navbar: FC<Props> = ({ orientation = "horizontal" }) => {
           </CustomNavLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <CustomNavLink to="#">
+          <CustomNavLink to="/certifications">
             <NavigationMenuLink>Certifications</NavigationMenuLink>
           </CustomNavLink>
         </NavigationMenuItem>

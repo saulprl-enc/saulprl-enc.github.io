@@ -10,7 +10,9 @@ export const Hero = () => {
           alt="Encora's logo"
           className="h-10"
         />
-        <h1 className="font-bold text-4xl">Welcome to my Spark Journey!</h1>
+        <h1 className="font-bold text-4xl text-center md:text-left">
+          Welcome to my Spark Journey!
+        </h1>
         <p>
           Hi, my name is{" "}
           <span className="font-bold text-primary">Saúl Ramos</span> and in this
@@ -21,7 +23,7 @@ export const Hero = () => {
           .
         </p>
         <div className="flex flex-wrap gap-4 items-center">
-          <LinkButton to="#" className="bg-encora-red">
+          <LinkButton to="/blog" className="bg-encora-red">
             Blog
           </LinkButton>
           <LinkButton to="#" className="bg-encora-green">

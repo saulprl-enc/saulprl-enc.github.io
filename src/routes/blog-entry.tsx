@@ -19,10 +19,8 @@ export function loader({ params }) {
 export const BlogEntry = () => {
   const data = useLoaderData() as TBlogEntry;
 
-  console.log(data);
-
   return (
-    <div className="w-full flex items-start justify-start pt-2 pb-32">
+    <div className="w-full flex items-start justify-start pt-2 pb-32 px-2">
       {data.content}
     </div>
   );

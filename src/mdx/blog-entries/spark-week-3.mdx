@@ -1,0 +1,138 @@
+export { Layout as default } from "../components/components.tsx";
+
+# Spark Week 3
+
+<br></br>
+Just like the previous week, this one was way less meeting-centered since we've
+already gone through many of the onboarding classes. In this case, the
+activities assigned to us were both programming and teamwork-focused. Before
+talking about the assignments, though, we'll dive into some of the meetings we
+had during this week.
+
+<br></br>
+## Meetings
+
+<br></br>
+### Getting Things Done
+
+<br></br>
+_Getting Things Done_ is a workshop that revolves around the GTD methodology,
+which is meant to help with time management, and overall keeping the premise
+that _Our mind is for having ideas, not holding them._ We dove into this
+methodology by breaking it down in steps:
+
+- Collect
+- Sort out
+- Organize
+- Review
+- Act
+
+<br></br>
+We also learned about some of its pros, such as reducing cognitive overhead and
+multitasking, and its cons, like being too flexible and time-consuming at first.
+
+<br></br>
+All in all, I think I could start applying this methodology, especially since I
+rely a lot on my own memory, increasing cognitive overhead and leading to
+procrastination, which leads into the next topic.
+
+<br></br>
+### Procrastination
+
+<br></br>
+We were given a talk on procrastination. Really needed, in my opinion, since I
+believe this is something a lot of people struggle with (especially when working
+from home).
+
+<br></br>
+Procrastination was defined as the difficulty in starting activities and
+committing to them, frequently due to the fear of failure, lack of motivation,
+mental health problems, among others. In my case, I've always felt like my main
+procrastination _trigger_ is self-regulation issues, since I've always been
+impulsive and I constantly find myself overworking on a specific task, driving
+me to defer other (and usually more important) activities.
+
+<br></br>
+I'm glad that motivation was also one of the covered topics in this talk because
+I think it's also something I struggle with from time to time, especially in
+those cases where I overwork for an extended period of time and eventually
+feeling burnt out.
+
+<br></br>
+After this talk, I'm down to try out the Pomodoro technique once again. It's a
+technique that seems functional to me but I never got into the habit of using it
+consistently.
+
+<br></br>
+### Agile class
+
+<br></br>
+We had a class about **Agile methodologies**! This was a very informative and
+theory-heavy class about agile methodologies and the way they're implemented
+across Encora's teams. Even though I've worked on teams using, for instance,
+Scrum, it's always nice to have a refresher and it definitely helped me in that
+regard. A key takeaway for me was the **atomic check-ins** or **atomic commits**
+concept, where the developer commits small fragments of code in order to prevent
+major issues or outages.
+
+<br></br>
+## Weekly Assignments
+
+<br></br>
+Last week, we were given the task of creating a GitHub account. Well, this week
+we got to use it! We were assigned a couple of [LeetCode](https://leetcode.com/)
+exercises to solve both as a team and individually.
+
+<br></br>I was in charge of creating the team's GitHub repository where we would
+all push our solutions to the exercises we picked. I've done this kind of thing before,
+so it wasn't anything new, but it's always good to get some practice.
+
+<br></br>
+### Patching Array
+
+<br></br>I picked the [Patching Array](https://leetcode.com/problems/patching-array/)
+exercise, which consists of patching an array of numbers until all of its combinations
+are capable of adding up to every number from 1 to `n`.
+
+<br></br>
+#### The solution
+
+<br />
+At first, with `JavaScript`, I really overengineered my solution. I followed the
+exercise's context step by step and figured that I needed to perform some array operations
+in order to solve it and so I did. I created multiple functions like `getCombinations()`,
+`sumCombination()`, and `minPatches()`. When coding the last function, I started
+to realize that **I only really needed to figure out which numbers I can't form out
+of smaller ones**, but I kept going. Eventually, I tested my solution and it passed
+the basic test cases, but when it came to submitting, it simply ran out of time.
+My solution was so complex that it would simply take too long to calculate everything.
+
+<br />
+Later, I decided to explore my previous idea of just finding out which numbers I
+can't form out of smaller numbers, and that's what I did. I modified the `minPatches()`
+function to go through the array exactly one time and just check whether I can add
+some of the numbers I already have to get new ones (for instance, I can't form `2`
+without having multiple `1`s; but once I have `1` and `2`, I can form `3`). This
+solution **passed all of the submission test cases**. Afterwards, I coded the same
+solution in `Java`.
+
+<br />
+### Public blog
+
+<br />
+We were given the assignment of creating a public blog where we would document our
+journey as **Sparks**. From the moment I read the assignment, I thought _it's most
+definitely overkill, but I'll do it in React,_ so I was aware of that, but I still
+wanted to use `React` since I really enjoy working with that framework and it's the
+one I'm the most comfortable with. I had quite a difficult time deciding on the specifics
+of how I wanted it to look, but eventually decided to take some inspiration out of
+my own [personal portfolio](https://portfolio-saulprl.vercel.app). This time, though,
+I wanted to learn new stuff, so I decided to integrate [MDX](https://mdxjs.com).
+That way, I can just write my blog entries in `markdown` instead of HTML, while also
+adding some of my custom components with `React`.
+
+<br />
+Being honest, it was a bit more complicated than I expected, but I achieved what
+I wanted, so it was worth exploring. Of course, I plan on improving the design and
+adding more content to it so my blog entries don't just feel like a bunch of text,
+but that'll come with time.

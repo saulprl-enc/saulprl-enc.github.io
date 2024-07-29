@@ -21,5 +21,9 @@ export const BlogEntry = () => {
 
   console.log(data);
 
-  return data.content;
+  return (
+    <div className="w-full flex items-start justify-start pt-2 pb-32">
+      {data.content}
+    </div>
+  );
 };

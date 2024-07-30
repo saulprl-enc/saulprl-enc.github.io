@@ -5,14 +5,14 @@ export const Hero = () => {
   return (
     <Section>
       <div className="flex flex-col items-start justify-center basis-1/2 gap-6 p-2">
+        <h1 className="font-bold text-4xl">
+          Welcome to my Spark Journey!
+        </h1>
         <img
           src="/encora-logo-black.svg"
           alt="Encora's logo"
-          className="h-10 self-center md:self-auto"
+          className="h-6"
         />
-        <h1 className="font-bold text-4xl text-center md:text-left">
-          Welcome to my Spark Journey!
-        </h1>
         <p>
           Hi, my name is{" "}
           <span className="font-bold text-primary">Saúl Ramos</span> and in this

@@ -26,9 +26,13 @@ interface Props {
 }
 
 export const BlogList: FC<Props> = ({ variant = "section" }) => {
+  const sortedEntries = blogEntries
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, variant === "section" ? 3 : undefined);
+
   return (
     <div className={cn(variants({ container: variant }))}>
-      {blogEntries.map((entry) => (
+      {sortedEntries.map((entry) => (
         <BlogItem
           key={entry.id}
           to={`/blog/${entry.slug}`}

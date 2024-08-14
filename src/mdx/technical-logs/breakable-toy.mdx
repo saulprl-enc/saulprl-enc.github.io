@@ -1,0 +1,64 @@
+export { Layout as default } from "../components/components.tsx";
+
+# Breakable Toy - ToDo list
+
+<br />
+## Overview
+<br />
+**Breakable Toy** consists of a ToDo List web application that allows the user to keep track of their *to-dos* by setting a concise title, a priority, and a non-required due date. This kind of app is intended to help with productivity and to prevent procrastination, as well as being a really good exercise for learning something new from a developer standpoint.
+
+<br />
+## Context
+<br />
+
+The situation is that I'm working with a client that needs a ToDo List to help them manage their tasks. Specifically, they need the following requirements:
+- Create *to-dos* with a specified title, priority level, and an optional due date.
+- Be able to update a *to-do*'s information.
+- Ability to filter *to-dos* by title, priority level, or status (done or pending).
+- Be able to sort *to-dos* by due date and/or priority level.
+- Be able to mark as done or undo *to-dos*.
+- Display the *to-dos* with pagination, since they might create a lot of them.
+- Display average completion times for all *to-dos*, and averages by priority level.
+
+<br />
+The client's Engineering Team also made some recommendations, which are:
+- **Model**
+  - A *to-do* should have the following properties: an ID (unique), title (required, 120 characters max), due date (optional), done flag, done date, priority, and creation date.
+- **API**
+  - A `GET` endpoint with paginated data (10 elements each page), and options to sort by priority and/or due date, or filter by title, priority level, and/or status.
+  - A `POST` endpoint to create new *to-dos* with validations.
+  - A `PUT` endpoint to update *to-dos* with validations.
+  - A `POST` endpoint to mark *to-dos* as done.
+  - A `PUT` endpoint to undo *to-dos*.
+- **Database**
+  - No need for a database right now, but they'd like to implement it in the future, so the solution should be as easy as possible to adapt.
+- **Front-end stack**
+  - `JavaScript`/`TypeScript`.
+  - `React`.
+- **Back-end stack**
+  - `Java`.
+  - `Maven`.
+  - `Spring Boot`.
+
+<br />
+## Solution
+<br />
+For my solution, I heavily focused on the back-end first due to it being my first time using `Java` for an API (and first time with the language in several years). I researched how to start a `Spring Boot` application and ultimately followed the [Spring Boot docs](https://spring.io/guides/gs/spring-boot). Afterwards, I researched some examples for the project structure since I like to keep my projects well organized, and found [this Medium article](https://malshani-wijekoon.medium.com/spring-boot-folder-structure-best-practices-18ef78a81819) that explained it pretty clearly. From then on, I started to play with it and looked for ways to [implement endpoints](https://saurabhnativeblog.medium.com/understanding-controllers-in-spring-boot-with-examples-312cb1879ec1), define what responsibilities belonged to the controller, the service, and the repository, and eventually settled with very simple endpoints for a standard CRUD application, where I'd be able to get all *to-dos*, get a single one, update, create, and delete one.
+<br />
+After getting it to work on it most basic form (and testing it with `curl`), I started thinking about pagination, and I remembered that I had already worked with a `Headless CMS` that includes pagination by default, [PayloadCMS](https://payloadcms.com/). `Payload`'s API responds with several informative data fields for pagination, such as `currentPage`, `limit`, `totalPages`, `nextPage`, `previousPage`, and more, so I wanted to implement something like that with `Spring`. I found [this great resource on pagination](https://www.baeldung.com/rest-api-pagination-in-spring), but eventually settled for creating my own `PaginatedData` class. I decided that the repository should be in charge of paginating the data (due to the fact that it would be the class that accesses the database) and created a method that takes in all of the optional parameters for the main `GET` endpoint. Since there are many filters, this method would conditionally filter or sort the available data and then create the pages based on their size (10 items per page). This was done using `stream()` and `Comparator`s.
+<br />
+With the pagination done, I decided to start a simple front-end app with `React` with `Vite`, `TypeScript`, `TailwindCSS`, and some libraries I really like. Here are some:
+- For routing, [React Router](https://reactrouter.com/en/main).
+- For async state (API calls), [TanStack Query](https://tanstack.com/query/latest).
+- For forms, [React Hook Form](https://react-hook-form.com/).
+- For components, [shadcn/ui](https://ui.shadcn.com/).
+<br />
+From the very start, I decided that I didn't want to use some global state manager like Redux because many of the features for this app like pagination, sorting, and filtering are state elements that can be stored in a URL, making the URL shareable and bookmarkable for future querying, so that's the reason I used `react-router`.
+<br />
+For the server state, `react-query` is probably just the best library out there, helping prevent debugging nightmares due to `useEffect` and overall making queries far easier to manage.
+<br />
+Regarding `shadcn/ui`, it's a component library that provides highly accessible and customizable components. They are not *installed* like with a normal library, but they instead get downloaded into your project as an editable source file.
+<br />
+For the design, I decided to keep it very simple to be able to focus on the features instead, but `shadcn/ui` helped a lot with making it look clean.
+<br />
+For the development itself, it was a very standard React application that connects to the server. However, there were some challenges due to it being the first time I used `search parameters` as state management, as well as having to synchronize their values with the forms (for instance, `title=dishes` should populate the title field with the word `dishes`). 

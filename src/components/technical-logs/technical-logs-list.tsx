@@ -25,9 +25,13 @@ interface Props {
 }
 
 export const TechnicalLogsList: FC<Props> = ({ variant = "section" }) => {
+  const sortedTechLogs = technicalLogs
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, variant === "section" ? 3 : undefined);
+
   return (
     <div className={cn(variants({ container: variant }))}>
-      {technicalLogs.map((log) => (
+      {sortedTechLogs.map((log) => (
         <TechnicalLogItem
           key={log.id}
           to={`/technical-logs/${log.slug}`}

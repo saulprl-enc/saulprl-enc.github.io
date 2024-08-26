@@ -4,6 +4,7 @@ import Week3 from "@/mdx/blog-entries/spark-week-3.mdx";
 import Week4 from "@/mdx/blog-entries/spark-week-4.mdx";
 import Week5 from "@/mdx/blog-entries/spark-week-5.mdx";
 import Week6 from "@/mdx/blog-entries/spark-week-6.mdx";
+import Week7 from "@/mdx/blog-entries/spark-week-7.mdx";
 import { mdxComponents } from "@/mdx/components/components";
 
 export type TBlogEntry = {
@@ -47,5 +48,13 @@ export const blogEntries: Array<TBlogEntry> = [
     slug: "spark-week-6",
     content: <Week6 components={{ ...mdxComponents }} />,
     estimatedTime: 4,
+  },
+  {
+    id: 7,
+    title: "Spark Week 7 Essay",
+    date: "2024-08-27",
+    slug: "spark-week-7",
+    content: <Week7 components={{ ...mdxComponents }} />,
+    estimatedTime: 2,
   },
 ];

@@ -1,0 +1,39 @@
+export { Layout as default } from "../components/components.tsx";
+
+# Breakable Toy 2 - Flight Search
+
+<br />
+## Overview
+<br />
+**Breakable Toy 2** consists of a full-stack web application that allows the user to look for flight offers with specified origin, destination, and date(s).
+
+<br />
+## Context
+<br />
+
+I've been asked to build a full-stack web app that communicates with [Amadeus' API](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335) to provide the user with real flight data. These are some of the requirements:
+- Specify a departure airport.
+- Set an arrival airport.
+- Pick a departure date and an optional return date.
+- Choose a currency code for the flight's prices.
+- Specify whether the flight should have stops.
+
+<br />
+Some of the recommendations made to build this project were:
+- Using React with TypeScript for the front-end.
+- Using Java and Spring Boot with Gradle for the back-end.
+- Use Docker to easily run both projects.
+- Consume the corresponding Amadeus API endpoints.
+
+<br />
+## Solution
+<br />
+
+For my solution, I mainly focused on the back-end since it appeared to be what would take most of my time (and it did, ~~thanks, Amadeus~~). Unfortunately, I still underestimated how much it would take me due to having to create classes and records for every model that the API's specification provides. I followed roughly the same folder structure that I explained on my [previous project](https://saulprl-enc.github.io/#/technical-logs/breakable-toy). I also employed some techniques I discovered on that one, like DTO classes to better define the communication between both apps (front and back-end). For most of the app's endpoints, I essentially just wrapped Amadeus' ones with my own, since I needed a lot of the data that they already provided.
+<br />
+For the front-end, I decided to start a `Vite React` project like the last one since I already had a dedicated back-end. I reused all of the libraries I did previously like `React Query`, `React Router`, `React Hook Form`, `TailwindCSS`, `shadcn/ui`, and `zod`:
+- `React Query` is excellent for managing async state.
+- `React Router` provides client-side routing in an SPA.
+- `React Hook Form` simplifies and optimizes form handling.
+- `TailwindCSS` and `shadcn/ui` allow delivering a great UI.
+- `zod` adds an extra layer of type-safety by allowing the developer to define schemas that are validated in runtime.

@@ -97,7 +97,7 @@ export const blogEntries: Array<TBlogEntry> = [
   {
     id: 12,
     title: "Spark Week 12 Essay",
-    date: "2024-09-29",
+    date: "2024-10-01",
     slug: "spark-week-12",
     content: <Week12 components={{ ...mdxComponents }} />,
     estimatedTime: 3,

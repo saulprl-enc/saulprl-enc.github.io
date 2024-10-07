@@ -1,0 +1,58 @@
+export { Layout as default } from "../components/components.tsx";
+
+# Spark Week 13
+<br />
+
+My 13th week in the Spark Program was purposed to increase the rythm for my certification course and checking out my notes as a refresher for the exam, so let's just have a quick overview of what I learned.
+<br />
+
+## Certification Course
+<br />
+
+### EC2 Instance Metadata
+<br />
+
+I learned about Instance Metadata, which is an AWS feature that allow EC2 instances to learn about themselves. It consists of an endpoint that retrieves the instance's data, such as its role names, region and availability zone. It is different from userdata, though, which is a script that gets executed once when the instance is initialized.
+<br />
+
+### AWS Limits
+<br />
+
+I read about some AWS' API rate limits. For example:
+- DescribeInstances API for EC2 has a limit of 100 calls per second.
+- GetObject on S3 has a limit of 5500 GET requests.
+- You can have up to 1152 vCPUs.
+- You can open a ticket to AWS to increase your rate limits.
+<br />
+
+### Exponential Backoff
+<br />
+
+The Exponential Backoff feature consists of intelligently managing whenever a request to a service fails, making it so that requests are throttled and staggered exponentially.
+<br />
+
+### CLI Credentials Provider Chain
+<br />
+
+The CLI has a priority order to properly authenticate your requests, and it conforms to the following:
+1. CLI options (such as `--region`, `--output`, and `--profile`).
+2. Environment variables.
+3. CLI credentials file.
+4. CLI configuration file.
+5. Container credentials for ECS tasks.
+6. Instance profile credentials.
+<br />
+
+### Byte-Range Fetches
+<br />
+
+I learned about Byte-Range Fetches and they actually caught me by surprise. Basically, they allow you to fetch a specific byte range of a file (or group of files). This means that you can make some quick analysis of a bucket by querying the first, say, 200 bytes of each file (assuming those 200 bytes actually tell you something meaningful) and improve your bucket's performance due to the reduced traffic.
+<br />
+
+Overall, I checked out a lot more topics (S3 performance in general, S3 object encryption, CloudFront, Fargate, Elastic Beanstalk), but I honestly felt like I overwhelmed myself quite a lot due to the amount of information I got, so I decided to use next (current) week to look back on it.
+<br />
+
+### Lightning Talks
+<br />
+
+Lastly, this week was our last Lightning Talk (5 minute-presentation) and felt like I couldn't really adapt to the time constraint because I usually like to dive into whatever topic I'm talking about, and with 5 minutes being not enough for that, I felt completely rushed.
